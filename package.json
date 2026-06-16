@@ -1,0 +1,12 @@
+{
+  "name": "hello-api",
+  "version": "1.0.0",
+  "main": "src/server.js",
+  "scripts": {
+    "test": "jest",
+    "build": "rm -rf dist && mkdir dist && cp -r src/* dist/"
+  },
+  "devDependencies": {
+    "jest": "^30.4.2"
+  }
+}

@@ -2,9 +2,28 @@ pipeline {
     agent any
 
     stages {
+
+        stage('Install') {
+            steps {
+                sh 'npm ci'
+            }
+        }
+
+        stage('Test') {
+            steps {
+                sh 'npm test'
+            }
+        }
+
         stage('Build') {
             steps {
-                sh './app.sh'
+                sh 'npm run build'
+            }
+        }
+
+        stage('Archive Artifact') {
+            steps {
+                archiveArtifacts artifacts: 'dist/**'
             }
         }
     }
