@@ -1,6 +1,6 @@
 function health() {
   return {
-    status: "UP",
+    status: "ACHRAF",
   };
 }
 
