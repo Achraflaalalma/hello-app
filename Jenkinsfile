@@ -23,7 +23,7 @@ pipeline {
 
         stage('Docker Build') {
             steps {
-                sh 'docker build -t hello-api:${BUILD_NUMBER} .'
+                sh 'docker build -t lfrida404/hello-api:${BUILD_NUMBER} .'
             }
         }
 
@@ -35,10 +35,7 @@ pipeline {
 
         stage('Docker Push') {
             steps {
-                sh '''
-                docker tag hello-api:${BUILD_NUMBER} lfrida404/hello-api:${BUILD_NUMBER}
-                docker push lfrida404/hello-api:${BUILD_NUMBER}
-                '''
+                sh 'docker push lfrida404/hello-api:${BUILD_NUMBER}'
             }
         }
 
