@@ -1,5 +1,7 @@
-const { add } = require("../src/server");
+const { health } = require("../src/server");
 
-test("adds numbers", () => {
-  expect(add(2, 3)).toBe(5);
+test("health endpoint returns UP", () => {
+  expect(health()).toEqual({
+    status: "UP",
+  });
 });

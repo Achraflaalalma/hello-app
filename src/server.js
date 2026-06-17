@@ -1,5 +1,7 @@
-function add(a, b) {
-  return a + b;
+function health() {
+  return {
+    status: "UP",
+  };
 }
 
-module.exports = { add };
+module.exports = { health };
