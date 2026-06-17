@@ -1,6 +1,6 @@
 function health() {
   return {
-    status: "laalalma",
+    status: "FINAL",
   };
 }
 
