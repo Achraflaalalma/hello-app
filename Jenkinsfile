@@ -32,5 +32,14 @@ pipeline {
                 archiveArtifacts artifacts: 'dist/**'
             }
         }
+
+        stage('Docker Push') {
+            steps {
+                sh '''
+                docker tag hello-api:${BUILD_NUMBER} lfrida404/hello-api:${BUILD_NUMBER}
+                docker push lfrida404/hello-api:${BUILD_NUMBER}
+                '''
+            }
+}
     }
 }
