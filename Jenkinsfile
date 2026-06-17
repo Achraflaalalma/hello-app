@@ -40,6 +40,20 @@ pipeline {
                 docker push lfrida404/hello-api:${BUILD_NUMBER}
                 '''
             }
-}
+        }
+
+        stage('Deploy') {
+            steps {
+                sh '''
+                docker stop hello-api || true
+                docker rm hello-api || true
+
+                docker run -d \
+                  --name hello-api \
+                  -p 3000:3000 \
+                  lfrida404/hello-api:${BUILD_NUMBER}
+                '''
+            }
+        }
     }
 }
