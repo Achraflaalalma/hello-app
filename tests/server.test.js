@@ -1,7 +1,7 @@
 const { health } = require("../src/server");
 
-test("health endpoint returns ACHRAFF", () => {
+test("health endpoint returns laalalma", () => {
   expect(health()).toEqual({
-    status: "ACHRAFF",
+    status: "laalalma",
   });
 });
